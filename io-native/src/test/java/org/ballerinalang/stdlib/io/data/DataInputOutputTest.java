@@ -153,9 +153,14 @@ public class DataInputOutputTest {
 
     @DataProvider(name = "StringValues")
     public static Object[][] stringValues() {
+        String os = System.getProperty("os.name").toLowerCase();
+        String charset = CharEncoding.UTF_8;
+        if ("win".equals(os)) {
+            charset = "Windows-1252";
+        }
         return new Object[][]{
-                {"Test", CharEncoding.UTF_8},
-                {"aaabbǊ", CharEncoding.UTF_8}
+                {"Test", charset},
+                {"aaabbǊ", charset}
         };
     }
 
