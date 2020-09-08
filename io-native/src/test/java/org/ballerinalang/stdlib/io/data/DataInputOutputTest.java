@@ -155,6 +155,7 @@ public class DataInputOutputTest {
     public static Object[][] stringValues() {
         String os = System.getProperty("os.name").toLowerCase();
         String charset = CharEncoding.UTF_8;
+        System.out.println(os);
         if ("win".equals(os)) {
             charset = "Windows-1252";
         }
